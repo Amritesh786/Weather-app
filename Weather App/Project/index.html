@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <h1>WEATHER APP</h1>
+        <div class="tab-container">
+            <p class="tab" id="userWeather">Your Weather</p>
+            <p class="tab" id="searchWeather">Search Weather</p>
+            <div class="weather-container">
+                <!--Grant Location Container-->
+                <div class="grant-location-container">
+                    <img src="location.png" height="80" width="80" loading="lazy">
+                    <p>Grant Location Access</p>
+                    <p>Allow access to get weather information</p>
+                    <button class="btn" id="grantAccess-btn">Grant Access</button>
+                </div>
+                <!--Search City Container-->
+                <form class="form-container" id="searchForm">
+                    <input type="text" placeholder="Search for City..." id="SearchInput">
+                    <button class="btn" type="submit">
+                        <img src="search.png" height="20" width="20" loading="lazy">
+                    </button>
+                </form>
+                <!--Loading Screen Container-->
+                <div class="loading-screen-container">
+                    <img src="loading.png" width="150" height="150">
+                    <p>Loading</p>
+                </div>
+                <!--Weather Display-->
+                <div class="weather-info-container">
+                    <div class="nameAndimage">
+                        <p id="cityName"></p>
+                        <img id="countryIcon" >
+                    </div>
+                    <p id="weatherDescription"></p>
+                    <img id="weatherIcon">
+                    <p id="temperature"></p>
+                    <!--3 cards-->
+                    <div class="cards-container"></div>
+                    <!--Card1-->
+                    <div class="card1">
+                        <img src="wind.png" height="50" width="50">
+                        <p>Windspeed</p>
+                        <p id="WindSpeed"></p>
+                    </div>
+                    <!--Card2-->
+                    <div class="card2">
+                        <img src="humidity.png" height="50" width="50">
+                        <p>Humidity</p>
+                        <p id="Humidity"></p>
+                    </div>
+                    <!--Card3-->
+                    <div class="card3">
+                        <img src="clouds.png" height="50" width="50">
+                        <p>Clouds</p>
+                        <p id="Cloudiness"></p>
+                    </div>
+                </div> 
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
+<!--Koi bhi element show ya hide karna ho through JS(i.e->CSS ko change karna ho through JS) to hum classList mein "active" class add kr dete h jisme hum opacity ya scale ko 1 kar dete h aur hide karna h to "active" class hata dete h-->
+<!--The Geolocation API is used to access the user's current location. Since this can compromise privacy, the location is not available unless the user approves it.-->
+
+<!--Project mein 3 screens h jisme one of them is "Grant Location Access" screen jo tab appear hogi jab browser ke local storage ke andar humare coordinates store nahi honge ya available nahi honge-->
+
+<!--The loading attribute specifies whether a browser should load an image immediately or to defer loading of off-screen images until for example the user scrolls near them.-->

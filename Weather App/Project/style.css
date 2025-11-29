@@ -1,0 +1,236 @@
+/* Reset & Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Wrapper */
+.wrapper {
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 20px;
+    padding: 30px;
+    max-width: 600px;
+    width: 100%;
+}
+
+/* Title */
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2rem;
+    letter-spacing: 1.5px;
+    color: #ffffff;
+}
+
+/* Tabs */
+.tab-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.tab {
+    text-align: center;
+    padding: 12px;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+.tab:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: scale(1.02);
+}
+
+/* Active tab - Your CSS Enhanced */
+.tab-current-tab {
+    background: linear-gradient(135deg, rgba(219, 226, 239, 0.7), rgba(255, 255, 255, 0.4));
+    border-radius: 10px;
+    color: #000;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+}
+
+/* Weather container */
+.weather-container {
+    margin-top: 20px;
+}
+
+/* States Hidden By Default */
+.grant-location-container,
+.loading-screen-container,
+.weather-info-container,
+.form-container {
+    display: none;
+    text-align: center;
+}
+
+/* Active class shows element */
+.active {
+    display: block;
+}
+
+/* Buttons */
+.btn {
+    padding: 10px 20px;
+    margin-top: 15px;
+    background: #ffffff;
+    color: #1e3c72;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: transform 0.2s, background 0.3s;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    background-color: #e0e0e0;
+}
+
+/* Search form */
+.form-container {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    opacity: 0;
+    transform: scale(0.95);
+    transition: all 0.4s ease;
+}
+
+/* Active Search Form */
+.form-container.active {
+    opacity: 1;
+    transform: scale(1);
+    display: flex;
+    animation: fadeInScale 0.4s ease forwards;
+}
+
+@keyframes fadeInScale {
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Input Field */
+.form-container input {
+    padding: 10px 15px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    width: 70%;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    transition: 0.3s;
+}
+
+.form-container input::placeholder {
+    color: #ccc;
+}
+
+.form-container input:focus {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Search button */
+.form-container button {
+    background-color: #ffffff;
+    border-radius: 50%;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+/* City + Country Row */
+.nameAndimage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+#cityName {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+#weatherDescription {
+    margin-top: 10px;
+    font-size: 1rem;
+}
+
+#temperature {
+    font-size: 2rem;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/* Cards container */
+.cards-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+/* Individual Weather Cards */
+.card1, .card2, .card3 {
+    flex: 1 1 30%;
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 15px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    transition: transform 0.3s ease;
+}
+
+.card1:hover, .card2:hover, .card3:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.card1 img, .card2 img, .card3 img {
+    margin-bottom: 10px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .form-container input {
+        width: 60%;
+    }
+
+    .cards-container {
+        flex-direction: column;
+    }
+
+    .card1, .card2, .card3 {
+        width: 100%;
+    }
+}
